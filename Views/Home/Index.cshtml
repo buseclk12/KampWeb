@@ -1,0 +1,78 @@
+﻿@using WebApplication2.Models
+@model List<User>
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<style>
+    .tab {
+        background-color : antiquewhite;
+    }
+    .tab tr {
+        border: 2px solid #000000;
+    }
+    .tab th {
+        border: 2px solid #000000;
+    }
+    .registerbtn {
+        background-color: antiquewhite;
+        color: black;
+        padding: 16px 24px;
+        margin: 10px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    </style>
+<html>
+<head>
+       <meta name="viewport" content="width-device-width" />
+       <title>Index</title>
+</head>
+<body>
+    <div>
+
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th>Identity</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Birthday</th>
+                    @*  <th>Photo</th>
+                <th>Faal</th>
+                <th>Opinion</th> *@
+                </tr>
+            </thead>
+            <tr>
+                @foreach (var userInfo in Model)
+                {
+                    <td>
+                <tbody>
+                <th> @userInfo.Identity </th>
+                <th> @userInfo.Name </th>
+                <th> @userInfo.Surname </th>
+                <th> @userInfo.Email </th>
+                <th> @userInfo.Phone </th>
+                <th> @userInfo.City </th>
+                <th> @userInfo.Birthday </th>
+                <th><a href="/Form/Delete?id=@userInfo.Identity";return false;">Sil</a></th>
+               
+
+                </tbody>
+                </td>
+            }
+                </tr>
+            </table>
+</div>
+    </body>
+
+
+
+       
+
+
